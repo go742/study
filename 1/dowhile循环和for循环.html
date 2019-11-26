@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+       /* var i = 0;
+        var sum = 0;
+        while (i<100){
+            sum+=i;
+            i++;
+        }
+        console.log(sum);
+
+
+        var j = 0;
+        var sums = 0;
+        do{
+            sums+=j;
+            j++;
+        }while (j<100);
+        console.log(sums);*/
+
+       /* var i = 102;
+        while (i<100){
+            console.log("aa");
+            i++;
+        }*/
+
+       /*
+       * do{}while{};循环，先执行do的内容块，然后才去判断条件
+       * 如果条件满足时继续循环，如果不满足就不再循环
+       *
+       * while{}循环是先判断条件才去执行语句块的
+       * */
+       /* var i = 102;
+        do{
+            console.log("aa");
+            i++;
+        }while (i<100);*/
+
+
+       /*
+       * for(表达式1;表达式2;表达式3)
+       * 表达式1一共运行了1次，循环之前运行
+       * 表达式2是一个或者多个条件，不满足一个就跳出循环，循环多少次就执行多少次，
+       * 在运行循环之前先判断条件
+       * 表达式3循环多少次就执行多少次，循环语句块中所有语句完成后再执行
+       *
+       * */
+
+        /*for(var i= sum = 0;i<=100;sum+=i,i++){}
+        console.log(sum);*/
+
+        /*for(var i = 0,sum = 0;;sum+=i,i++){
+            if(i>100)break; //如果条件语句的语句块只有一句话可以省略大括号
+        }
+        console.log(sum);*/    //死循环
+
+        /*for(;;){
+            //与while(true){}完全相同
+        }*/
+
+        //打印1-100之间的素数
+        /*for(var i = 2; i<100; i++){
+            var bool = false;
+            for(var j = 2; j<i; j++){
+                if(i%j===0){
+                    bool = true;
+                    break;
+                }
+            }
+            if(!bool)console.log(i);
+        }*/
+    </script>
+</body>
+</html>

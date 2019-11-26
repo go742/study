@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        var arr = [-2,-1,0,1,2,3,4,5];
+        //var len = arr.push();//返回数组的新长度
+        //len = arr.push(6);//[1,2,3,4,5,6],6
+        //var len = arr.push(6,7,8);//[1,2,3,4,5,6,7,8],8
+        //var len = arr.push([6,7,8]);//[1,2,3,4,5,[6,7,8]],8
+
+//        var len = arr.unshift();
+//        var len = arr.unshift(0);
+//        var len = arr.unshift(-2,-1,0);
+        /*
+        * 减少使用unshift
+        *
+        * */
+       // console.log(len,arr);
+
+        //删除数组尾部的元素
+        /*var t = arr.pop();
+        console.log(t);
+        console.log(arr);*/
+        /*var arr1 = [];
+        var t;
+        while (t = arr.pop()){
+            arr1.push(t);
+        }
+        console.log(arr1,arr);*/
+
+        //删除数组的头部元素
+        var t = arr.shift();//返回被删除的元素
+        console.log(arr);
+    </script>
+</body>
+</html>

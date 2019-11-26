@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        //split根据分隔符将字符串分割为数组，和数组中方法join相对，是join的逆方法
+        /*var str = "a,b,c,d,e";
+        var arr = str.split(",");
+        console.log(arr);*/
+
+
+        /*var str = "abcde";
+        var arr = str.split("");
+        console.log(arr);*/
+
+        /*var str = "abcde";
+        str = str.split("").reverse().join("");//倒序字符
+        console.log(str);*/
+
+
+        var url = "http://www.163.com/index.html?ab=3&name=ztl&password=12345";
+        /*var index = url.indexOf("?");
+        var str = url.slice(index+1);
+        console.log(str);*/
+//        console.log(url.split("?")[1]);
+
+
+
+        /*function getObject(url){
+            var obj = {};
+            var str = url.split("?")[1];
+            var arr = str.split("&");
+            for(var i=0;i<arr.length;i++){
+                var str1 = arr[i];
+                var arr1 = str1.split("=");
+                var prop = arr1[0];
+                var value = arr1[1];
+                obj[prop] = value;
+            }
+            return obj;
+        }*/
+        /*function getObject(url){
+            var obj = {};
+            var arr = url.split("?")[1].split("&");
+            for(var i=0;i<arr.length;i++){
+                var arr1 = arr[i].split("=");
+                obj[arr1[0]] = arr1[1];
+            }
+            return obj;
+        }
+        console.log(getObject(url));*/
+
+
+
+    </script>
+</body>
+</html>

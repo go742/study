@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        /*if(条件){
+            执行语句
+        }
+
+        if(条件){
+            执行语句1
+        }else{
+            否则
+            执行语句2
+        }
+
+        if(条件){
+            执行语句1
+        }else if{
+            执行语句2
+        }else if{
+            执行语句3
+        }else if{
+            执行语句4
+        }else{
+            执行语句5
+        }*/
+
+        var value1 = Number(prompt("请输入第一个数值"));
+        var value2 = Number(prompt("请输入第二个数值"));
+        var key = prompt("请输入运算符");
+        if(!isNaN(value1) && !isNaN(value2)){
+            if(key==="+"){
+                sum = value1+value2;
+            }else if(key==="-"){
+                sum = value1-value2;
+            }else if(key==="*"){
+                sum = value1*value2;
+            }else if(key==="/"){
+                sum = value1/value2;
+            }else{
+                sum = "请输入正确的运算符";
+            }
+        }else{
+            sum = "输入的数值有误";
+        }
+        console.log(sum);
+
+    </script>
+</body>
+</html>

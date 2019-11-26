@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        /*function fn0(a,b){
+            console.log(a,b)
+        }*/
+
+        /*
+        * 弱类型语言，参数类型和初始值
+        * 参数类型 因为不能固定，因此，如果写给别人用的代码时，一定要判断输入参数的类型
+        * 初始化 在ES5中函数的参数不能设置初始化值（如果执行函数的时候没有输入该参数，
+         * 希望它有一个默认的初始值），也需要进行设置，ES6中是有初始化参数的，因此ES6中可以直接使用
+        * 定义函数中的参数叫做形参
+        * 设置函数中的参数值，参数值就是实参
+        * */
+        /*function fn1(a,b,type){
+            if(type!=="+" && type!=="-" && type!=="*" && type!=="/"){
+                type="+";
+            }
+            if(isNaN(a)) a = 0;
+            if(isNaN(b)) b = 0;
+            var sum = 0;
+            switch (type){
+                case "+":
+                    sum = a+b;
+                    break;
+                case "-":
+                    sum = a-b;
+                    break;
+                case "*":
+                    sum = a*b;
+                    break;
+                case "/":
+                    sum = a/b;
+                    break;
+            }
+            console.log(sum);
+        }
+        fn1(3,5,"+");
+        fn1("10","abc","*");*/
+
+
+        /*
+        * 参数可以传入对象
+        *
+        * */
+       /* function fn2(o){
+            o.a = 10;
+        }
+
+        var obj = {c:1};
+        var obj1 = {d:1};
+        fn2(obj);
+        console.log(obj);
+
+        function fn3(s){
+            s+=10;
+        }
+        var sum = 10;
+        fn3(sum);
+        console.log(sum);*/
+
+
+        /*
+        * 参数如果写在所有参数的最前面，那就是必要参数
+        * ES5中所有的参数一般都需要按位填写，如果没有填写就变成undefined
+        * 多填进入的参数不会被直接获取到
+        *
+        * */
+
+        function max(){
+            //console.log(arguments);//函数中就可以获取这个arguments
+            var arr = Array.from(arguments);
+            return arr.reduce(function (p1,p2){
+                return p1>p2 ? p1 : p2;
+            });
+        }
+        console.log(max(1,2,3,5,7,9,1,2,5));
+        console.log(max(3,6,3,20,354));
+
+        function fn2(){
+            //arguments.callee 当前执行的函数
+            console.log(arguments.callee.a);
+            console.log(arguments.callee);
+            console.log(arguments.callee.calleer);//回调当前函数的父级函数
+
+        }
+        fn2.a = 10;
+        fn2(3,4,6,7);
+
+    </script>
+</body>
+</html>

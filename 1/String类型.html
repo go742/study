@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        //5
+        var str = new String("b");//str的类型是object
+        str = str+2;//运算法则使str自动转换字符串
+        console.log(typeof str);//string
+
+
+
+        //1
+        var str1 = "abc";
+        console.log(str1[1]);
+        str1[0] = "d";//字符串可以通过[索引值]获取这个位置的字符，但是不能设置这个位置的字符
+        console.log(str1);
+
+        console.log(str1.length);
+        //str1.length = 2;//字符串的length不可修改，只能获取
+
+        function stringReverse(str){
+            var str1 = "";
+            for(var i=str.length-1;i>=0;i--){
+                str1+=str[i];
+            }
+            return str1;
+        }
+
+        console.log(stringReverse("abcdef"));
+    </script>
+</body>
+</html>

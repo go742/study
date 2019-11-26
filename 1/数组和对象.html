@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        var arr = [1,2,3,4,5];
+        var obj = {a:1,b:2,c:3};
+        /*var arr1 = arr;
+        arr[0] = 10;
+        console.log(arr1);*/
+
+        /*var arr1 = [];
+        for(var i=0;i<arr.length;i++){
+            arr1[i] = arr[i];
+        }
+        arr[0] = 10;
+        console.log(arr1);*/
+
+        //var str = arr.toString();
+        //var str = obj.toString();//错误 {object object}
+        /*var str = "";
+        for(var prop in obj){
+            str+= prop+"="+obj[prop]+"&";
+        }
+        console.log(str);*/
+
+        //将对象转换为JSON字符串
+        var str = JSON.stringify(obj);
+        //将JSON字符串逆转回对象
+        var obj1 = JSON.parse(str);
+        console.log(obj1);
+
+        var str1 = JSON.stringify(arr);
+        var arr1 = JSON.parse(str1);
+        console.log(arr1);
+
+        var objs={
+            a:1,
+            b:{
+                a:1,
+                b:{
+                    a:1,
+                    b:{
+                        a:1
+                    }
+                }
+            }
+        };
+        /*var obj2 = {};
+        for(var prop in objs){
+            obj2[prop] = objs[prop];
+        }
+        objs.b.a = 10;*/
+        /*
+        * 利用JSON转换可以完成深复制
+        *
+        * */
+       /* var obj2 = JSON.parse(JSON.stringify(objs));
+        objs.b.b.a = 10;
+        console.log(obj2);*/
+
+        console.log("b" in obj);//属性名是否在对象下
+        /*if("b" in obj){
+
+        }*/
+
+        //数组中是否有该下标
+        console.log(3 in arr);//5 in arr   false
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        var str = "abcde";
+        str.slice(1,2);//与数组中的slice完全相同，用于截取字符中的某个内容
+
+        /*getRandomColor();
+        function getRandomColor(){
+            var col = "rgb(";
+            for(var i=0;i<3;i++){
+                col+=Math.floor(Math.random()*256)+",";
+            }
+            col = col.slice(0,-1);
+            col+=")";
+            console.log(col);
+        }*/
+
+        //str.substr(开始位置,要截取字符串长度)       2
+//        console.log(str.substr(0,3));
+
+        //str.substring(开始位置,截取的结束位置)       1
+        //和slice不同在：负数不是代表从后向前数，而是位置0的前面
+//        console.log(str.substring(0,3));
+//        console.log(str.substring(3,-1));//从第3个字符串开始向前截取
+        console.log(str.substring(5,2));//可以开始位置大于结束位置，这就是逆向截取
+    </script>
+</body>
+</html>

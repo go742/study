@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        /*
+        * length 数组的长度
+        * 数组的长度是可以设置的
+        * 将数组的长度设置为0，表示清空数组
+        * 如果数组的长度小于原数组长度，意味着将数组从第0位截取到指定位置
+        * */
+        var arr = [1,2,3,4,5];
+        /*console.log(arr.length);
+        arr.length = 3;
+        console.log(arr);*/
+
+        //arr[arr.length-1] = 6;//将数组中最后一个元素替换为6
+        arr[arr.length] = 6;//将数组的尾部添加一个新元素6
+        arr.a = 100;
+        /*
+        * 使用for循环数组，只能循环数组的每个元素
+        * 使用for in 循环数组，不但可以循环数组的每个元素，还可以循环到它的属性
+        *
+        *
+        *
+        * */
+        for(var i=0;i<arr.length;i++){
+            console.log(arr[i]);
+        }
+        for(var prop in arr){
+            console.log(arr[prop]);
+        }
+    </script>
+</body>
+</html>

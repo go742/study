@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        var arr = [1,2,4,6,7,8,5,9];
+        /*var bool = arr.some(function (t) {
+            //判断所有元素是否有满足该条件的
+            //如果遇到一次满足则不再继续判断，直接返回true，否则返回false
+            return t>4;
+        });
+        console.log(bool);*/
+
+        //if(arr.some(function (t){ return t>5;}));
+
+
+        //判断数组中每一个是否满足条件，全部满足返回true，否则返回false
+        /*var bool = arr.every(function (t){
+            return t>2;
+        });
+        console.log(bool);*/
+
+
+        //filter 过滤筛选
+       /* var arr1 = arr.filter(function (t){
+            //t++;
+            return t>5;//返回的仍然是原数组元素
+        });
+        console.log(arr1);*/
+
+
+        //如果没有initValue值，sum就是第0项的值，item就是第1项值，所以index是从1开始
+        //求和运算
+        var s = arr.reduce(function (sum,item,index){
+            console.log(sum,item,index);
+            return sum+item;
+        },-10);//这里第二个参数是initValue初始值，如果设置这个初始值，index就从0开始
+        console.log(s);
+
+
+//        Array.isArray();//Array是类名 上面的arr是实例
+//        Array.from();//ES6的方法
+
+//        Array.prototype.slice.call(div);//（ES5）
+//        Array.from(div);//将类数组转换为数组（ES6）
+    </script>
+</body>
+</html>

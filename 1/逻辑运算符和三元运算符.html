@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        var x = 0;
+        var str = "abcde";
+        console.log(!x);
+
+        if(!~str.indexOf("a")){
+
+        }
+
+        //转换布尔值判断
+        var s = "";
+        /*if(!s){
+         console.log("1");
+         }//条件语句只能有布尔值
+         if(s){
+         console.log("2");
+         }
+
+         //true && true===true; //两者都必须满足
+         if(x===5 && !s){
+
+         }
+
+         //true || false===true;  //两者之间有一个满足条件就条件达成
+         if(x===5 || s){
+
+         }*/
+
+//        条件 ？ 值1 ： 值2，如果条件为true，返回值1，条件为false，返回值2
+//        var sum = x>500 ? 500 : 400;
+
+        x = x>50; //x = x>50 ? true : false;
+        x = x>50 ? 100 : (x===50 ? 50 : 0);
+        s = s || 50; //s=s ? s : 50; 熔断处理
+        //判断obj是否是真，如果不是真，就设置为一个空对象
+        obj = obj || {}; //obj=obj ? obj : {};
+        console.log(s);
+
+    </script>
+</body>
+</html>

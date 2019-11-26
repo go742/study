@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        /*
+        * return 只能使用在函数中，直接跳出函数，不执行return以后的语句
+        * break; 只能使用在循环或者switch中，跳出当前循环，不执行break以后语句并且不再进入函数
+        * continue 只能使用在函数中，跳出本次循环，当前不再执行continue后面的语句，但是继续下一次循环
+        * */
+        //return可以返回一个数据给函数运行的外面
+        function sum(a,b){
+            return a+b;
+        }
+        var s = sum(10,20);
+        //console.log(s);
+
+        function fn1(a,b){
+            var sum = a+b;
+            console.log("sum:"+sum);
+        }
+        //如果函数没有使用return或者直接使用return，后面没有值，这时候实际是返回一个undefined
+        console.log(fn1(3,5));
+
+        function createD(w,h,bg){
+            var style = "width:"+w+"px;height:"+h+"px;background-color:"+bg;
+            var div = "<div style="+style+"></div>";
+            return div;
+        }
+        document.write(createD(50,50,"red"));
+
+
+       /* function createObj(_a){
+            /!*var obj = {a:_a};
+            return obj;*!/
+            return {a:_a};
+        }
+        console.log(createObj(3)===createObj(3));//false*/
+
+        /*
+        * return 只能返回一个值
+        * */
+        /*function getRect(w,h){
+            var _perimeter = w*2+h*2;
+            var _area = w*h;
+            return {perimeter:_perimeter,area:_area};
+        }
+        console.log(getRect(100,50).area);//执行函数的结果，打印结果的属性area*/
+
+       /* var box;
+        function createBox(_a,_b){
+            if(!box){
+                box = {};
+            }
+            box.a = _a;
+            box.b = _b;
+            return box;
+        }
+        console.log(createBox(3,5)===createBox(10,20));*/
+
+
+        /*
+        * 返回参数传入的对象
+        * */
+
+        /*function setObjProper(obj){
+            obj = obj || {};//宽模式
+            obj.n = 3;
+            return obj;
+        }
+
+        var obj = setObjProper({});
+        var obj1 = setObjProper();
+        console.log(obj,obj1);*/
+
+
+        /*
+        * 参数是函数，返回回调函数的结果
+        * */
+
+        /*function fn2(fn){
+            var obj = {};
+            return fn(obj);
+        }
+        function fn3(obj){
+            obj.a = 10;
+            return obj;
+        }
+        function fn4(obj){
+            obj.b = 10;
+            return obj;
+        }
+
+        var obj = fn2(fn4);
+        console.log(obj);*/
+
+
+        /*
+        * 函数中返回一个函数，这叫做闭包
+        * */
+        function fn5(){
+            return function (){
+                console.log("aaa");
+            }
+        }
+
+        fn5()();
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        var arr = [1,2,3,4];
+//        console.log(arr.join());//与arr.toString()相同
+//        console.log(arr.join("#"));//设置一个符号，连接数组每个元素
+//        console.log(arr.join(""));//元素紧密相连
+
+
+        /*var arr1 = arr.concat();//没有参数时复制数组
+        arr[0] = 10;*/
+//        var arr1 = arr.concat(5,6);//将arr数字连接5，6两个元素，形成新数组，原数组不变
+//        var arr1 = arr.concat([5,6,7]);//将arr数组和数组[5,6,7]合并形成新数组
+        var arr2 = [7,8,9];
+        var arr1 = arr.concat(arr2);//将两个数组连接形成新数组
+        console.log(arr1);
+    </script>
+</body>
+</html>

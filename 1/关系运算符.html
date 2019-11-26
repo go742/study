@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        /*var x = 10;
+        console.log(x>10);*/
+
+        var x = 3;
+        console.log(x=="3");//自带隐式转换
+        console.log(x==="3");//表示判断两者之间的值和类型是否都相同
+
+        console.log(null==undefined);
+        console.log(""==0);
+        console.log(""==false);
+        //null==undefined
+        //0==false==""
+        //NaN与任何内容不同，NaN也不等于NaN
+        console.log(Number("10a")==NaN);//这是错误的
+        console.log(isNaN(Number("10a")));//isNaN()判断某个数值是否是非数值
+
+        x="";
+        if(x==false){
+            //"",0,false
+            console.log(x=="false");
+        }
+       /* if(x===false){
+            //false
+        }
+        if(!x){
+            //"",0,false,undefined,null,NaN
+        }*/
+
+
+    </script>
+</body>
+</html>

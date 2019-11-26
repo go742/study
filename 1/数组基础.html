@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            width: 50px;
+            height: 50px;
+            background-color: #245580;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        /*
+        * 数据结构
+        * 数组 将无序的数据做有序的排列，存储在一个变量中
+        * 原生JS中没有数组类型，原生JS中的数组可以存储多个不同类型的数据（弱类型）
+        *
+        * 数组中，标识元素所在的位置，叫做下标，也可以叫做索引
+        * 数组中，标识元素的内容，arr[0]这个就叫做下标变量
+        * */
+
+        var arr = [1,2,3,4,5];//字面量创建
+
+        var arr1 = new Object([1,2,3,4]);//对象构造函数创建
+        //console.log(typeof arr);
+        //console.log(Array.isArray(arr));//判断arr是否是数组，注意typeof arr 值是object
+
+        //var arr2 = [1,false,"a",{a:1,b:2}];//这种类型不同的数据存储会造成数组操作时的效率降低
+
+        //var arr2 = new Array(1,2,3,4);//构造函数创建
+
+        /*
+        * 构造函数创建数组时，第一个参数
+        * 如果第一个参数是数值类型并且构造函数中只有这一个参数，这个参数就是设置数组的长度，这
+        * 个长度不能是小数或者负数，否则会报错
+        *
+        * 如果参数有2个或者2个以上，那么第一个元素就不是数组的长度，而是数组的第0个元素，如果第
+        * 一个参数不是数值类型且仅有一个，也是作为数组的第0个元素
+        * */
+        var arr2 = new Array(4);//4是长度
+
+        var arr3 = [];
+        arr3[0] = 100;
+        arr3[1] = 200;
+        console.log(arr3);
+
+        var arr4 = [];
+        for(var i = 0,j = 0; i<100;i+=2,j++){
+            arr4[j] = i;
+        }
+        console.log(arr4);
+
+
+    </script>
+</body>
+</html>

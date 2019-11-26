@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div id="div0"></div>
+    <script>
+        /*var date = new Date();
+        console.log(date);
+        console.log(date.getFullYear());
+        console.log(date.getMonth());//月份显示是从0开始计算，1就是2月
+        console.log(date.getDate());
+        console.log(date.getDay());//星期几   0-6  0是星期日
+        console.log(date.getHours());
+        console.log(date.getMinutes());
+        console.log(date.getSeconds());
+        console.log(date.getMilliseconds());//毫秒
+
+
+        date.setFullYear(2020);
+        date.setMonth(12);//如果设置12 大于11 就进1年 当前位1月 2021年1月
+        console.log(date);*/
+
+
+        var div = document.getElementById("div0");
+        setInterval(animation,1000);
+        function animation(){
+            var date = new Date();
+            div.innerHTML = date.getFullYear()+"年"+(date.getMonth()+1)+"月"+
+            date.getDate()+"日 星期"+(date.getDay()===0 ? "日" : date.getDay())
+            +""+date.getHours()+"时"+date.getMinutes()+"分"+date.getSeconds()+"秒";
+        }
+
+
+        /*
+        * var id = setInterval(每次执行函数，多少毫秒执行一次)
+        * 返回一个id，这个id的左右可以是clearInterval清除该id，这样就停止了这个时间间隔
+        *
+        * clearInterval(id)  清楚时间间隔执行函数
+        *
+        * */
+        /*var id = setInterval(fn,16);
+        var num = 0;
+        function fn(){
+            console.log(id);
+            num++;
+            if(num>=3){
+                clearInterval(id);
+            }
+
+        }*/
+
+
+        /*
+        * setTimeout(需要以后执行的函数，需要多少毫秒以后)   延迟执行函数
+        * 返回一个id，用来作为清楚该延迟使用的
+        *
+        * clearTimeout   清楚延迟处理
+        *
+        * */
+       /* var id = setTimeout(fn1,4000);
+        function fn1(){
+            //只要使用setTimeout就一定在函数中使用clearTileout清楚它
+            console.log("aaa");
+        }*/
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        /*
+        * reverse 倒序
+        * 原数组倒序改变，返回的新数组和原数组是引用关系
+        *
+        *
+        * */
+        var arr = [2,3,5,7,9,1,4,6,8,10];
+        /*var arr1 = arr.reverse();
+        console.log(arr,arr===arr1);*/
+
+        /*
+        * sort()
+        * 排序数组中的元素，原数组发生改变，返回的新数组和原数组是引用关系
+        * sort(function(a,b){});
+        *
+        * */
+        /*var arr1 = arr.sort();
+        console.log(arr,arr1===arr);*/
+
+        //由小到大排序
+       /* arr.sort(function (pre,next){
+            return pre-next;
+        });
+        console.log(arr);*/
+        //由大到小排序
+        /*arr.sort(function (pre,next){
+            return next-pre;
+        });
+        console.log(arr);*/
+
+
+        var arr2 = [];
+        //普通的随机
+        /*while (arr2.length<4){
+            var num = parseInt(Math.random()*100);
+            if(arr2.indexOf(num)===-1){
+                arr2.push(num);
+            }
+        }
+        console.log(arr2);*/
+
+        //排序的随机乱序
+        /*for(var i=0;i<100;i++){
+            arr2.push(i);
+        }
+        arr2.sort(function (){
+            return Math.random()-0.5;
+        });
+        arr2.length = 4;
+        console.log(arr2);*/
+
+        //抽奖
+        /*var arrs = [];
+        for(var i=0;i<9995;i++){
+            arrs.push(0);
+        }
+        for(var j=1;j<6;j++){
+            for(var j1=0;j1<j;j1++){
+                arrs.push(j);
+            }
+        }
+        arrs.sort(function (){
+            return Math.random()-0.5;
+        });
+        console.log(arrs);*/
+
+
+        var str = "az";
+        //拼音字符排序
+        /*console.log(str.charCodeAt(0));
+        var arr3 = ["aka","lisi","wangwu","zhangxueyou"];
+        arr3.sort(function (pre,next) {
+            return pre.charCodeAt(0)-next.charCodeAt(0);
+        });
+        console.log(arr3);*/
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        //重要级别由大到小 1 2 3 4 5
+
+        //5
+        var s = 10;
+        var s1 = new Number(10);
+        console.log(s===s1);//false
+        console.log(s1/2);//5
+        console.log(s1);
+        console.log(typeof s1);//object
+
+        //5
+        console.log(Number.MAX_VALUE);
+        console.log(Number.MIN_VALUE);//小数点后324位
+        console.log(Number.NEGATIVE_INFINITY);//负无穷
+        console.log(Number.POSITIVE_INFINITY);//正无穷
+
+        //Number.NaN和NaN相同
+        //3
+        // NaN!==NaN
+
+        var s2 = 10;
+        console.log(s2.toString(16));//1
+        s2.toFixed(2);//1
+
+        //5
+        console.log(s2.toExponential(2));//2是小数点后几位，用科学记数法表示，转换字符串
+        console.log(s2.toPrecision(2));//2是数字是几位，用科学记数法表示（如果刚好，不需要是科学记数法），转换字符串
+
+    </script>
+</body>
+</html>
