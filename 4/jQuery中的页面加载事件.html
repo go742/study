@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--<script>
+        //页面的加载事件
+        window.onload = function () {
+          console.log("aaaa");
+        };
+        window.onload = function () {
+          console.log("bbbb");
+        };
+    </script>-->
+    <script src="../scripts/jquery-1.12.2.js"></script>
+    <script>
+        //jQuery的代码，和DOM中的window.onload事件是相同的
+        /*$(window).load(function () {
+           console.log("aaaa");
+        });
+        $(window).load(function () {
+           console.log("bbbb");
+        });*/     //jquery3版本会报错
+        //页面中所有的内容加载完毕后才触发，标签，图片，文字内容。。。
+
+        //第二种页面加载的事件的写法
+        //页面中的基本标签加载完毕后就可以触发
+       /* $(document).ready(function () {
+            console.log("aaaa");
+        });
+        $(document).ready(function () {
+            console.log("bbbb");
+        });*/
+
+        /*jQuery(function () {
+           console.log("aaaa");
+        });
+        jQuery(function () {
+           console.log("bbbb");
+        });*/
+
+        /*$(function () {
+           console.log("aaaa");
+        });
+        $(function () {
+            console.log("bbbb");
+        });*/
+    </script>
+</head>
+<body>
+
+</body>
+</html>
