@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var ul;
+        const COL_NUM = 5;
+        const MARGIN_LEFT = 5;
+        init();
+        function init() {
+            ul = document.createElement("ul");
+
+            Object.assign(ul.style,{
+                listStyle:"none",
+                width:"100%",
+                margin:0,
+                padding:0
+            });
+            for(var i = 0; i < COL_NUM; i++){
+                var li = document.createElement("li");
+                Object.assign(li.style,{
+                    margin:0,
+                    marginLeft:MARGIN_LEFT + "px",
+                    padding:0,
+                    fontSize:0,
+                    width:(document.body.clientWidth - MARGIN_LEFT * (COL_NUM - 1))/COL_NUM + "px",
+                    float:"left"
+                });
+                ul.appendChild(li);
+            }
+            document.body.appendChild(ul);
+            resizeHandler();
+            window.addEventListener("resize",resizeHandler);
+        }
+        function resizeHandler(e) {
+            for(var i = 0;i < ul.children.length;i++){
+                ul.children[i].style.width = (document.body.clientWidth - MARGIN_LEFT * (COL_NUM - 1))/COL_NUM + "px";
+            }
+        }
+    </script>
+</body>
+</html>

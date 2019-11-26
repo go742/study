@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        var user = "abc";
+        document.cookie = "user = " + user;
+        document.cookie = "age = 5";
+        document.cookie = "age = 10";
+
+
+        /*
+        * 1.必须是服务器开启时，才可以设置和获取cookie
+        * 2.cookie存储内容不大于5k
+        * 3.cookie是以域名存放区分，不同域不能访问其他域的存储cookie
+        * （IP相同，端口不同也是不同域）同一个域下，不同的文件可以共享同一个cookie
+        * 只要是同一个域，不同的文件夹下不同的文件都是可以共享同一个cookie的
+        * 4.cookie存储的只能是数值或者字符串（最后都会变成字符串存储）
+        * 需要存储数组或者对象可以借助JSON.stringfy转换字符串存储
+        * 5.cookie存储在一个域中的数目是有限的，一般是50条左右
+        * 6.浏览器被关闭后cookie将会丢失，但是我们可以使用过期时间进行存储
+        * 7.cookie存储不能跨浏览器，不同的浏览器要设置不同cookie
+        * 8.在打开一个域名的网站时，如果当前存储cookie中有这个域的存储内容，就会
+        * 自动将当前cookie裹挟发送到页面中，当表单提交时，如果服务器文件和当前文
+        * 件是同一个域，也会将当前的cookie裹挟发送给php页面
+        *
+        * 9.缺点：浏览器可以设置屏蔽cookie，或者清楚cookie
+        * */
+        var obj = {
+            a:1,
+            b:2
+        };
+        var date = new Date();
+        date.setDate(22);
+        document.cookie = "obj = " + JSON.stringify(obj) + ";expires = " + date.toString();
+        console.log(document.cookie);
+
+
+        /*
+        * 过去：第一次打开页面时，先查看该域下cookie中有没有这个token（服务器PHP页面查看）
+        * 现在：第一次打开的是html页面，通过ajax将cookie传送到服务端程序中（主动传送）
+        *
+        * 如果没有token，（跳转到登陆页面）等待用户点击登录，输入用户名和密码登录页面时，
+        * 会通过提交表单将用户名和密码（加密）发送到php页面，php页面验证正确性，标识是否
+        * 登录，如果登录，php页面会主动存储token（加密的id，唯一）到我们的页面域对应的cookie中。
+        *
+        * 第二次登录时，php页面获取到cookie传来的token就可以判断是否自动登陆了
+        *
+        * */
+    </script>
+</body>
+</html>
