@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+//        window.document;(DOM)
+        //window是权限最高的对象，它可以找到我们要操作的所有子目标
+
+        /*var a = window.open("http://www.baidu.com","百度","width=200,height=200");
+        console.log(a);*/
+
+//        window.close();
+
+        console.log(window.innerWidth,window.innerHeight);//窗口内部宽高，不含工具栏、地址栏等内容，包含滚动条
+        console.log(window.outerWidth,window.outerHeight);//当前窗口宽高，包含工具栏等
+
+        console.log(window.screenLeft,window.screenTop);//窗口当前的位置 只能获取不能修改
+
+        /*var id = setTimeout(function (){
+            location.reload();//3秒后重载页面，给PHP等服务端工程师使用
+            clearTimeout(id);
+        },3000);*/
+
+        /*location.href = "http://www.baidu.com";//跳转页面
+        location.assign("http://www.baidu.com");//跳转页面
+        location.replace("http://www.baidu.com");//跳转页面*/
+
+        document.addEventListener("click",clickHandler);
+        function clickHandler(e){
+            location.href = "http://www.baidu.com";//跳转页面，有历史纪录
+            history.back();//历史纪录必须在通过href或者assign访问的页面中来操作返回
+//            history.forward();//在有历史纪录时，跳转到前一个页面
+            //history.length;//历史纪录的数目，有多少条历史纪录
+
+//            location.assign("http://www.baidu.com");//跳转页面，有历史纪录
+//            location.replace("http://www.baidu.com");//跳转页面，没有历史纪录
+        }
+
+        console.log(location.hash);//获取地址栏中#后面内容      5
+        console.log(location.search);//获取地址栏中？后面内容     1
+
+        console.log(location.hostname);//域名
+        console.log(location.pathname);//目录
+        console.log(location.port);//端口号
+        console.log(location.protocol);//协议
+
+
+        //相当于设备屏幕宽高
+        console.log(screen.availWidth,screen.availHeight);//不包含屏幕下面部件
+        console.log(screen.width,screen.height);//包含
+
+
+        console.log(navigator.userAgent);
+    </script>
+</body>
+</html>

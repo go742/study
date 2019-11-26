@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        p{
+            height: 6000px;
+        }
+        p img{
+            display: block;
+        }
+        div{
+            width: 50px;
+            height: 50px;
+            position: fixed;
+            right: 100px;
+            bottom: 100px;
+            border: 1px solid #000000;
+            font-size: 50px;
+            line-height: 60px;
+            text-align: center;
+            background-color: burlywood;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <img src="images/pic1.jpg">
+        <img src="images/pic2.jpg">
+        <img src="images/pic3.jpg">
+        <img src="images/pic1.jpg">
+        <img src="images/pic2.jpg">
+        <img src="images/pic3.jpg">
+        <img src="images/pic1.jpg">
+    </p>
+    <div>^</div>
+    <script>
+        var div;
+        var bool = false;
+        speed = 200;
+
+        init();
+        function init(){
+            div = document.querySelector("div");
+            div.addEventListener("click",clickHandler);
+            div.style.opacity = "0";
+            document.addEventListener("scroll",scrollHandler);
+            setInterval(animation,16);
+        }
+        function clickHandler(e){
+            bool = true;
+
+        }
+
+        function animation(){
+            if(!bool)return;
+            if(document.documentElement.scrollTop<=0){
+                bool = false;
+                div.style.opacity = "0";
+                return;
+            }
+            document.documentElement.scrollTop = speed;
+        }
+
+        function scrollHandler(){
+            if(document.documentElement.scrollTop>100){
+                div.style.opacity = "1";
+                return;
+            }
+            if(document.documentElement.scrollTop<=0){
+                div.style.opacity = "0";
+            }
+        }
+    </script>
+</body>
+</html>

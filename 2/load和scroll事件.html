@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            height: 3000px;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+    <script>
+        /*var img = new Image();
+        img.addEventListener("load",loadHandler);
+        img.src = "images/pic1.jpg";
+        document.body.appendChild(img);
+
+        function loadHandler(e){
+            console.log(this.width);//微任务和宏任务
+        }*/
+
+
+      //滚动条滚动事件
+        document.addEventListener("scroll",scrollHandler);
+
+        function scrollHandler(e){
+            console.log("aaa");
+        }
+    </script>
+</body>
+</html>

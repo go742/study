@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            width: 50px;
+            height: 50px;
+            background-color: #999999;
+        }
+    </style>
+</head>
+<body>
+<div id="div0"></div>
+<div id="div1"></div>
+<div id="div2"></div>
+<div id="div3"></div>
+<p id="p0">0</p>
+    <script>
+        "use strict";
+//        a = 5;//变量必须先要定义
+        /*function fn1(a,a) {
+           //函数参数名不能相同
+        }*/
+
+
+
+
+        /*document.body.style.color = "red";
+        document.body.style.backgroundColor = "#000000";
+        with(document.body.style){
+            color = "red";
+            backgroundColor = "#000000";
+            //不允许使用with
+        }*/
+
+
+
+
+//        "abc".length = 10;//只读属性不允许写入，否则报错
+        /*var obj = {};
+        Object.defineProperty(obj,"a",{
+            value:10,
+            writable:false
+        });
+        console.log(obj.a);
+        obj.a = 20;*///只读属性不可写
+        /*var obj = {
+            get num(){
+                return 2;
+            }
+        };
+        console.log(obj.num);
+        obj.num = 10;*///只读属性不可写
+
+
+
+
+//        var s = 0xFF;
+//        var s1 = 067;//不允许使用八进制
+
+
+
+
+        /*var arr = [1,2,3,4];
+        delete arr.length;*///不可删除的属性不能删除
+
+        /*var obj = {};
+        Object.defineProperty(obj,"a",{
+            value:10,
+            writable:false
+        });
+        delete obj.a;*///不可删除的属性不能删除
+
+
+        /*var sum = 10;
+        delete window.sum;*///变量不能删除
+
+
+
+
+        /*
+        * eval可以将任何字符串转为对象
+        *
+        * */
+        /*for(i=0;i<4;i++){
+            eval("div"+i).addEventListener("click",clickHandler);
+        }
+        function clickHandler(e) {
+            eval("p0").innerHTML = parseInt(eval("p0").innerHTML)+10;
+        }*/
+
+        /*var obj0 = {a:1};
+        var obj1 = {a:1};
+        for(var i=0;i<2;i++){
+            eval("obj"+i).a = 10;
+        }
+        console.log(obj0,obj1);*/
+
+        /*function fn1() {
+            console.log("a");
+        }
+        function fn2() {
+            console.log("b");
+        }
+        function fn3() {
+            console.log("c");
+        }
+        for(var i=1;i<4;i++){
+            eval("fn"+i)();
+        }*/
+
+
+
+        //eval argument不能重新赋值
+//        eval = 10;
+//        argument = 10;
+
+
+
+        //不能使用arguments.callee/caller
+        /*function fn1() {
+            arguments.callee;
+            arguments.caller;
+        }*/
+
+
+
+        //不允许，ES5的this是window，ES6严格模式this就是undefined
+        /*var a = 10;
+        window.a;
+        this.a;*/
+
+
+        //不能使用fn.callee和fn.arguments调用函数堆栈
+        /*
+        * 建议在ES6中，不再使用arguments
+        *
+        * */
+
+
+        //增加三个保留字  protected static interface
+    </script>
+</body>
+</html>

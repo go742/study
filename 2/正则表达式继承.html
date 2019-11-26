@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        /*
+        * 正则表达式目的在于处理字符串  查找 验证 修改 替换
+        *
+        * */
+        var reg1 = new RegExp("a","g");//构造函数方法
+        var reg2 = /a/g;//字面量写法
+
+        /*
+        * 正则表达式方法就两个
+        * test();  判断字符串是否符合正则表达式条件，返回布尔值
+        * exec();  返回一个数组，包括验证正则表达式在字符串中符合条件的元素和位置
+        *
+        * */
+//        var reg = /e/;
+//        console.log(reg.test("acbd"));
+//        console.log(reg.exec("aeecbcd"));
+
+        /*
+        * String字符串方法
+        *
+        * search  搜索，查找 返回下标
+        * match  搜索查找 返回数组，被查找的所有符合条件的元素
+        * replace  替换 返回被替换的新字符串
+        * split  切割 返回被正则查找到的元素切割的数组
+        * */
+        var str = "abcdabc";
+//        console.log(str.search(/[bd]/g));//返回被查找到的下标,返回是第一个被查找到的
+//        console.log(str.match(/c/));//返回被查找到的所有元素数组,如果不使用全局查找（/c/g），作用与正则方法exec相同
+//        console.log(str.match(/[bd]/g));//返回被查找到的所有元素数组
+//        console.log(str.match(/a/g).length);//可以判断字符被重复的次数
+
+//        console.log(str.replace(/c/g,"f"));//可以完成所有元素的替换，或者不同元素替换同一个元素
+//        console.log(str.split(/b/g));
+//        console.log(str.split(/[bd]/g));//可以做不同条件同时切割为数组
+    </script>
+</body>
+</html>

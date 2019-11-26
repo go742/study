@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #div0{
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            position: relative;
+            left: 50px;
+            top: 50px;
+
+        }
+        #div1{
+            width: 100px;
+            height: 100px;
+            background-color: deepskyblue;
+            position: absolute;
+            left: 50px;
+            top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div0">
+        <div id="div1"></div>
+    </div>
+    <script>
+        var div1 = document.querySelector("#div1");
+        var range = div1.getBoundingClientRect();
+        console.log(range);//可以获取到div的范围
+        /*
+        * x  元素到页面最左边的距离
+        * y  元素到页面最上面的距离
+        * left  x
+        * top  y
+        * right  元素最右边线到页面最左边的距离
+        * bottom  元素最下边边线到页面最上面的距离
+        * width  元素的宽度    width+border+padding
+        * height  元素的高度
+        *
+        * */
+        console.log(range.x,range.y,range.width,range.height);
+    </script>
+</body>
+</html>

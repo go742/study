@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        /*
+        * 任何范围性重复，在重复的次数增加?，就可以实现最小匹配次数
+        * 如果该匹配内容前后没有任何内容，就符合重复的最小次数
+        * 如果前后有其他内容，中间使用的是非贪婪匹配，就根据实际中最少能匹配的次数来确定
+        *
+        *
+        * */
+        console.log("asdjasdie".match(/\w{1,8}?/g));//不带空字符串
+        console.log("asdjasdie".match(/\w?/g));//带空字符串
+        console.log("asdjasdie".match(/\w{2,6}?/g));
+        console.log("asdjasdie".match(/\w{2}/g));
+        console.log("asdjasdie".match(/.*?/g));//匹配""次数
+        console.log('"as""asdasdas"'.match(/"\w+?"/g));//找到最小匹配次数
+
+
+
+        /*
+        * []  只能或者一个字符
+        * |  可以或者多个字符
+        * a|b|c -->  [abc]
+        *
+        * */
+//        console.log("catdog".match(/cat|dog/g));
+//        console.log("12".match(/[0-9]|1[0-9]/));
+
+
+        /*
+        *  ^  $
+        *  ^  写在[]外的作用就是起始，一般用在正则表达式的第一个位置，如果不是第一个位置就作为字符^使用
+        *  $  写在正则表达式的最尾部，作为整个正则判断的结束
+        *
+        * */
+        console.log("1998-06-17".match(/^\d{4}-\d{2}-\d{2}$/));
+    </script>
+</body>
+</html>

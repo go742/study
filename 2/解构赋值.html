@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        /*
+        * 解构赋值
+        * 多个变量赋值
+        *
+        *
+        * */
+
+        let [a,b,c] = [3,4,5];
+        console.log(a,b,c);
+
+
+//        let [d,e] = [5];
+//        console.log(d,e);//5,undefined
+        let [d,e=0] = [5];
+        console.log(d,e);
+
+
+        /*
+        * 函数参数解构赋值
+        *
+        * */
+        /*function fn1([a,b]) {
+            console.log(a+b);
+        }
+        fn1([3,5]);*/
+
+        /*
+        * 函数参数的解构赋值可以完成初始值定义
+        * */
+        /*function fn2([a,b=2]) {
+            console.log(a+b);
+        }
+        fn2([5]);*/
+
+        /*function fn3([a,b=0,c=0,d=0]) {
+
+        }
+
+        let arr = [1,2,3,4];
+        fn3(arr);*/
+
+
+        /*
+        * 数组解构赋值是一一顺序对应
+        * 对象解构赋值是属性名称对应
+        * */
+        /*let {sum,num} = {num:10,sum:20};
+        console.log(sum,num);*/
+
+        /*
+        * 对象解构赋值
+        *
+        * */
+        /*let {sum,a1,b1} = {
+            a1:2,
+            b1:4,
+            sum:function () {
+                return a1+b1;
+            }
+        };*/
+//        console.log(sum,a1,b1);
+
+
+        /*
+        * 字符串解构赋值，按照数组解构赋值模式
+        * 字符串解构赋值只能完成长度对象解构
+        * */
+        let [i1,i2,i3,i4] = "abcd";
+        console.log(i1,i2,i3,i4);
+        let {length:len} = "abcde";
+        let [{length:len0},{length:len1},{length:len2},{length:len3}] = ["aaa","bb","c","ddddd"];
+        console.log(len0,len1,len2,len3);
+
+
+        /*
+        * 对象解构赋值
+        *
+        * */
+        let {length:lens} = [1,2,3,4,5,6];
+        console.log(lens);
+
+
+        /*
+        * 交换变量
+        *
+        * */
+        let s1 = 10,s2 = 20;
+        [s1,s2] = [s2,s1];
+        console.log(s1,s2);
+
+
+        /*
+        * 函数中返回多个值
+        *
+        * */
+        function fn5() {
+            let a = 10;
+            let b = 20;
+            let c = 30;
+            return [a,b,c];//如果数组解构返回，外面的变量可以和里面的不同，但是按照顺序接收
+            return {a:a,b:b,c:c};//如果对象解构返回，外面的变量必须和返回的属性相同
+        }
+        let [s3,s4,s5] = fn5();
+
+
+    </script>
+</body>
+</html>

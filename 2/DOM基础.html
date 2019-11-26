@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <p>E:\all\1\知识图谱\DOM基本操作.png</p>
+
+    <div id="div0"></div>
+
+    <ul id="a">
+        <li></li>
+        <li class="abc"></li>
+        <li class="abc"></li>
+        <li class="abc def"></li>
+    </ul>
+    <ul id="b">
+        <li></li>
+        <li class="abc=r"></li>
+        <li class="abc"></li>
+        <li></li>
+    </ul>
+    <form action="#" method="get">
+        <!--name主要用于表单，对应的值，一般单选和多选必须设置value值-->
+        <input type="radio" name="ab" value="a">
+        <input type="radio" name="ab" value="b">
+        <input type="radio" name="ab" value="c">
+        <input type="radio" name="ab" value="d">
+        <input type="text" name="user">
+        <input type="password" name="pass">
+        <input type="submit">
+    </form>
+    <script>
+        document.getElementById("div0");//根据id名获取DOM元素,唯一一个
+        var lis = document.getElementsByTagName("li");//根据标签名获取所有的列表
+        lis = document.getElementsByClassName("abc");//根据标签中class名获取元素列表
+        console.log(lis);//HTMLCollection HTML标签元素列表类型，是类数组，但不能使用数组的方法
+
+        var radio = document.getElementsByName("ab");//根据表单元素的name获取节点列表
+        console.log(radio);
+        radio.forEach(function (t) {
+            console.log(t);
+        });
+        //Nodelist 节点列表，具有forEach的遍历方法
+
+        //根据选择器选择元素
+       /* document.querySelector();
+        document.querySelectorAll();*/
+        var li1 = document.querySelectorAll("#b .abc");
+        console.log(li1);
+        var li2 = document.querySelector("[abc=r]");//属性选择器中属性值等于什么
+        console.log(li2);
+
+        //全文档查找
+        var ul0 = document.getElementById("a");
+        //从ul0这个父级元素的子元素中查找className是abc的元素
+        var li3 = ul0.getElementsByClassName("abc");
+    </script>
+</body>
+</html>

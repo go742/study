@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div></div>
+    <script>
+        function abc() {
+            return "a";
+        }
+
+        let cde = ()=>"a";
+
+        console.log(abc());
+        console.log(cde());
+
+        let fn1 = a=>console.log(a);
+        let sum = (a,b)=>a+b;
+        fn1(3);
+        console.log(sum(3,6));
+
+
+        let div = document.querySelector("div");
+        div.onclick=e=>{
+
+        }
+
+        let fn2=(a,b)=>{a*=a;b*=b;return a*b};
+        /*
+        * 1.如果没有参数需要小括号
+        * 2.如果有一个参数可以不用小括号
+        * 3.如果有多个参数必须要加小括号
+        *
+        * 4.如果仅有一条语句，并且返回该内容，（ES5中return）可以不写return
+        * 5.如果有多条语句，必须加{}将函数内容括起来，否则会认为是函数外语句，并且如果return，就需要增加return语句
+        * 6.箭头函数中this的指向是原代码块的this指向，不受其他指向影响
+        *
+        * */
+
+        /*div.addEventListener("click",e=>{
+            console.log(this);
+        });*/
+
+        /*let obj = {
+            a:function () {
+                document.addEventListener("click",e=>{
+                    console.log(this);
+                })
+            }
+        };
+        obj.a();*/
+
+        let arr = [1,2,3,4,5,6];
+        arr.sort((a,b)=>a-b);
+        console.log(arr);
+    </script>
+</body>
+</html>

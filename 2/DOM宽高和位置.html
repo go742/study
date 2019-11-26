@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        div
+        {
+            width: 100px;
+            height: 100px;
+            border: 2px solid #000000;
+            padding: 5px;
+            margin: 10px;
+            /*overflow: scroll;*/
+            background-color: burlywood;
+            position: absolute;
+        }
+        p{
+            height: 300px;
+            width: 300px;
+        }
+        #div0{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            position: relative;
+            left: 50px;
+            top: 50px;
+
+        }
+        #div1{
+            width: 50px;
+            height: 50px;
+            background-color: deepskyblue;
+            position: absolute;
+            left: 25px;
+            top: 25px;
+        }
+    </style>
+</head>
+<body>
+<!--<div>
+    <p></p>
+</div>-->
+<div></div>
+<!--<div id="div0">
+    <div id="div1"></div>
+</div>-->
+    <script>
+        var div = document.querySelector("div");
+
+        //如果使用overflow:scroll  width-scrollWidth+padding宽度，scrollWidth 17px
+//        console.log(div.clientWidth,div.clientHeight);//width+padding
+//        console.log(div.offsetWidth,div.offsetHeight);//width+padding+border
+
+        //如果使用overflow:hidden  div左padding+里面内容的最大宽度
+//        console.log(div.scrollWidth,div.scrollHeight);
+
+        //默认body的高度是0，如果给里面放入了标签，内容会被撑开
+//        console.log(document.body.clientWidth,document.body.clientHeight);
+
+//        console.log(document.documentElement);//html标签、
+
+        //当前页面文档的宽高
+//        console.log(document.documentElement.clientWidth,document.documentElement.clientHeight);
+
+        /*document.addEventListener("click",clickHandler);
+        function clickHandler(){
+            div.style.left = Math.random()*document.documentElement.clientWidth-div.offsetWidth+"px";
+            div.style.top = Math.random()*document.documentElement.clientHeight-div.offsetHeight+"px";
+
+        }*/
+//        document.body.style.overflow = "hidden";//去除body的滚动条
+
+
+
+        /*
+        * document 文档，dom根元素
+        * document.documentElement html标签
+        * document.body body标签
+        *
+        * */
+
+
+
+//        console.log(div.clientLeft,div.clientTop);//左边线和上边线
+//        console.log(div.offsetLeft,div.offsetTop);//如果没有使用定位，左边距和顶部边距（到页面的左上顶部）
+//        console.log(div.scrollLeft,div.scrollTop);//滚动条位置
+
+
+        /*var div1 = document.getElementById("div1");
+        //如果父容器使用了定位，这个就是该元素到父容器左上角的位置
+        console.log(div1.offsetLeft,div.offsetTop);*/
+
+
+
+        /*var bool = false;
+        var speed = 1;
+        setInterval(animation,16);
+        div.addEventListener("click",clickHandler);
+
+        function clickHandler(){
+            bool = !bool;
+        }
+
+        function animation(){
+            if(!bool)return;
+            div.style.left = div.offsetLeft+speed+"px";
+        }*/
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #dropMenu{
+            position: relative;
+        }
+        button{
+            width: 120px;
+            height: 30px;
+            background-color: transparent;
+            border: 1px solid #000000;
+            box-shadow: 1px 1px 1px #999999;
+            position: relative;
+        }
+        button span:first-child{
+            margin-right: 20px;
+            font-size: 16px;
+        }
+        #triangle{
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border-top: 9px solid #000000;
+            border-left: 5px solid transparent;
+            border-right: 8px solid transparent;
+            position: absolute;
+            right: 5px;
+            top: 10px;
+        }
+        ul{
+            width: 118px;
+            list-style: none;
+            border: 1px solid #000000;
+            position: absolute;
+            top: 30px;
+            box-shadow: 1px 1px 1px #999999;
+            display: none;
+        }
+        li{
+            background-color: #FFFFFF;
+            line-height: 30px;
+            cursor: default;
+            text-align: center;
+            padding-right: 10px;
+            border-bottom: 1px solid #000000;
+        }
+        li:last-of-type{
+            border-bottom: none;
+        }
+        li:hover{
+            background-color: #CCCCCC;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="dropMenu">
+        <button><span></span><span id="triangle"></span></button>
+        <ul id="menu">
+        </ul>
+    </div>
+
+    <script>
+        var city = ["北京","上海","郑州","武汉","石家庄","青岛","深圳"];
+        var button,menu,dropMenu;
+        init();
+        function init() {
+            button = document.getElementsByTagName("button")[0];
+            menu = document.getElementById("menu");
+            dropMenu = document.getElementById("dropMenu");
+            for(var i=0;i<city.length;i++){
+                var li = document.createElement("li");
+                li.textContent = city[i];
+                menu.appendChild(li);
+            }
+            button.firstElementChild.textContent = city[0];
+            dropMenu.addEventListener("mouseleave",mouseLeaveHandler);
+            button.addEventListener("click",clickHandler);
+            menu.addEventListener("click",menuClickHandler);
+        }
+
+        function mouseLeaveHandler(e) {
+            menu.style.display = "none";
+        }
+        function clickHandler(e) {
+            menu.style.display = "block";
+        }
+        function menuClickHandler(e) {
+            if(e.target.constructor===HTMLUListElement) return;
+            button.firstElementChild.textContent = e.target.textContent;
+            menu.style.display = "none";
+        }
+    </script>
+</body>
+</html>

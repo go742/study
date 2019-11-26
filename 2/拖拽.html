@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            width: 50px;
+            height: 50px;
+            background-color: chocolate;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        //拖拽1
+//        var div = document.querySelector("div");
+        /*div.onmousedown = function (evt) {
+            var x = evt.offsetX;
+            var y = evt.offsetY;
+            document.onmousemove = function (e) {
+                div.style.left = e.clientX-x+"px";
+                div.style.top = e.clientY-y+"px";
+            };
+            div.onmouseup = function () {
+                document.onmousemove = null;
+            }
+        }*/
+       /* div.onmousedown = function (evt) {
+            var x = evt.offsetX;
+            var y = evt.offsetY;
+            document.onmousemove = function (e) {
+                div.style.left = e.clientX-x+"px";
+                div.style.top = e.clientY-y+"px";
+            };
+            div.onmouseup = function () {
+                document.onmousemove = null;
+            }
+        }*/
+
+
+
+        var div = document.querySelector("div");
+        div.addEventListener("mousedown",mouseDownHandler);
+        function mouseDownHandler(e) {
+            document.addEventListener("mousemove",mouseMoveHandler);
+            document.x = e.offsetX;
+            document.y = e.offsetY;
+            this.addEventListener("mouseup",mouseUpHandler);
+        }
+
+        function mouseMoveHandler(e) {
+            div.style.left = e.clientX-this.x+"px";
+            div.style.top = e.clientY-this.y+"px";
+        }
+
+        function mouseUpHandler(e) {
+            document.removeEventListener("mousemove",mouseMoveHandler);
+        }
+    </script>
+</body>
+</html>

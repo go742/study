@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <!--点击目标确认-->
+    <!--<ul>
+        <li>菜单1</li>
+        <li>菜单2</li>
+        <li>菜单3</li>
+        <li>菜单4</li>
+        <li>菜单5</li>
+        <li>菜单6</li>
+    </ul>
+    <script>
+        var ul = document.getElementsByTagName("ul")[0];
+        ul.addEventListener("click",clickHandler);//仅侦听外容器就可以达到对所有子容器的侦听
+        function clickHandler(e) {
+            if(e.target.constructor===HTMLUListElement) return;//如果e.target是ul，就跳出
+//            console.log(e.target);
+            e.target.style.color = "red";
+        }
+    </script>-->
+<ul>
+    <li>北京
+        <ul>
+            <li>昌平
+                <ul>
+                    <li>沙河</li>
+                    <li>城关</li>
+                    <li>回龙观</li>
+                    <li>天通苑</li>
+                </ul>
+            </li>
+            <li>海淀</li>
+            <li>朝阳</li>
+            <li>东城</li>
+            <li>西城</li>
+        </ul>
+    </li>
+    <li>山东</li>
+    <li>山西</li>
+    <li>河北
+        <ul>
+            <li>保定</li>
+            <li>石家庄</li>
+            <li>张家口
+                <ul>
+                    <li>张北</li>
+                    <li>下花园</li>
+                    <li>宣化</li>
+                    <li>憨憨</li>
+                </ul>
+            </li>
+            <li>承德</li>
+            <li>邯郸</li>
+        </ul>
+    </li>
+    <li>荷兰</li>
+</ul>
+    <script>
+        var lis = document.getElementsByTagName("li");
+        for(var i=0;i<lis.length;i++){
+            lis[i].addEventListener("click",clickHandler);
+        }
+
+        function clickHandler(e) {
+            e.stopPropagation();
+            this.bool = !this.bool;
+            if(this.bool){
+                this.firstElementChild.style.display = "none";
+                return;
+            }
+            this.firstElementChild.style.display = "block";
+
+        }
+    </script>
+</body>
+</html>

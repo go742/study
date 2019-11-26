@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<button></button>
+    <script>
+        var bn = document.querySelector("button");
+        var text = document.createTextNode("按钮");//创建文本节点，一般用于节点内有其他元素
+        bn.appendChild(text);
+        /*var div = document.createElement("div");
+        document.body.appendChild(div);*/
+
+//        var bn = document.querySelector("button");
+        bn.addEventListener("click",clickHandler);
+        function clickHandler(e){
+//            document.body.innerHTML+="<div></div>"//因为会被覆盖，因此不可以创建多次
+            var div = document.createElement("div");
+            document.body.appendChild(div);
+        }
+        var div = document.createElement("div");
+        console.log(div);
+
+        var ul = document.createElement("ul");
+
+        for(var i=0;i<10;i++){
+            var li = document.createElement("li");
+            ul.appendChild(li);
+        }
+        document.body.appendChild(ul);
+
+
+        var elem = document.createDocumentFragment();//文档碎片，为了让更多元素最后再加入到body中
+        for(var j=0;j<20;j++){
+            var divs = document.createElement("div");
+//            document.body.appendChild(divs);
+            elem.appendChild(divs);
+        }
+//        document.body.appendChild(elem);
+
+
+
+        //父容器.appendChild(子元素)
+        //父容器.insertBefore(子元素，要插入在谁前面)
+//        document.body.insertBefore(elem,ul);
+//        document.body.insertBefore(elem,document.body.firstElementChild);//插入在最前面
+
+        var div1 = document.createElement("div");
+        div1.textContent = "内容";//给标签添加文本内容，节点内没有其他元素，可以直接使用
+        console.log(div1.textContent);
+
+
+
+        /*
+        * 删除
+        * remove() 自己删自己
+        * removeChile() 删除子元素
+        *
+        * */
+
+//        ul.remove();
+        /*var li1 = ul.firstElementChild;
+        ul.removeChild(li1);//删除第一个子元素*/
+
+
+
+        /*
+        * 复制
+        * 1.复制当前元素及当前元素的子元素，DOM元素深复制  cloneNode(true)
+        * 2.仅复制当前元素及元素的属性，DOM元素浅复制    cloneNode(false)
+        *
+        * */
+
+
+
+        /*
+        * 父容器.replaceChild(新元素,就元素)
+        * 替换
+        *
+        * */
+    </script>
+</body>
+</html>

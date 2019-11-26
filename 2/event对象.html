@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!--<input type="checkbox" id="inputs">-->
+<form action="#" method="get" id="form1">
+    <input type="text" id="texts">
+    <input type="checkbox" id="inputs">
+    <input type="submit" >
+    <input type="reset" >
+</form>
+    <script>
+        /*
+        * 表单中如果表单元素的value值或者选中属性被修改，并且与原来的值不同
+        * 当失去焦距时触发change事件
+        *
+        *
+        * */
+        /*var inputs = document.querySelector("#inputs");
+        inputs.addEventListener("change",changeHandler);
+        function changeHandler(e) {
+            console.log(e);
+        }*/
+
+
+        /*
+        * submit和reset事件都是针对表单form的侦听
+        *通常用于提交表单和重置表单时，需要取消系统默认的提交事件
+        *
+        * */
+        /*var form1 = document.getElementById("form1");
+        form1.addEventListener("submit",formHandler);
+        form1.addEventListener("reset",formHandler);
+        function formHandler(e) {
+            e.preventDefault();
+            console.log("aaa");
+        }*/
+
+
+        /*
+        * 页面随着窗口大小的变化自适应缩放内部元素的大小
+        * resize事件是可以获取window窗口变化缩放事件侦听，当窗口大小发生改变是，收到该事件
+        * */
+       /* window.addEventListener("resize",resizeHandler);
+        function resizeHandler(e) {
+            var scale = document.documentElement.clientWidth/1343;
+            document.documentElement.style.fontSize = 100*scale+"px";
+        }*/
+
+
+        /*
+        * select
+        * 当文本框中的值被选中时，激活该事件
+        *
+        * texts.selectionStart texts.selectionEnd 被选中的元素
+        *
+        * */
+        /*var texts = document.getElementById("texts");
+        texts.addEventListener("select",selectHandler);
+        function selectHandler(e) {
+//            console.log(e);
+//            console.log(texts.selectionStart,texts.selectionEnd);
+            texts.value = texts.value.slice(0,texts.selectionStart)+
+                texts.value.slice(texts.selectionStart,texts.selectionEnd).toUpperCase()+
+                texts.value.slice(texts.selectionEnd);
+        }*/
+    </script>
+    <img src="images/pic1.jpg" id="imgs">
+</body>
+</html>

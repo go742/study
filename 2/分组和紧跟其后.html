@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="text" id="texts">
+    <script>
+        /*
+        * ()可以完成分组
+        * $n是第n个分组，在replace可以作为替换保留原来内容
+        *
+        * */
+        console.log(/^\d{4}(-\d{2}){2}$/.test("1998-06-17"));
+        console.log("18939289102".replace(/^(\d{3})(\d{4})(\d{4})$/,"$1****$3"));
+        var str = "<ul><li></li><li></li></ul>>";
+        console.log(str.replace(/(<\/?)(\w-?)>/g,"$1div>"));
+
+        /*
+        * ?=  紧跟其后是
+        * ?!  紧跟其后不是
+        *
+        * */
+        console.log("abAc".match(/[aA](?=c)/g));
+        console.log("abAc".match(/[aA](?!c)/g));
+
+
+        var texts = document.getElementById("texts");
+        texts.addEventListener("input",inputHandler);
+        function inputHandler(e) {
+            if (/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,16}$/.test(texts.value)) {
+                texts.style.color = "green";
+                return;
+            }
+            texts.style.color = "red";
+        }
+    </script>
+</body>
+</html>

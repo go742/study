@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<button id="bn0">按钮1</button>
+<button id="bn1">按钮2</button>
+    <script>
+        /*
+        * JavaScript是事件驱动语言
+        * 事件的作用是触发并且传递数据
+        *
+        * */
+
+        /*document.addEventListener("click",clickHandler);
+        function clickHandler(g) {
+            console.log(g);
+        }*/
+
+        /*var bn0 = document.getElementById("bn0");
+        var bn1 = document.getElementById("bn1");*/
+        /*bn0.addEventListener("click",clickHandler);
+        function clickHandler(e) {
+            console.log("aaa");
+        }
+
+        var evt = new MouseEvent("click");
+        bn0.dispatchEvent(evt);*/
+
+        /*bn0.addEventListener("chilema",fn1);//侦听事件
+//        bn0.dispatchEvent(new Event("chilema"));
+        var evt = new Event("chilema");
+        evt.n = 3;//事件对象是可以携带一些非系统规定的属性（原event对象的属性不能覆盖）
+        bn0.dispatchEvent(evt);//抛发事件
+        //同一个对象（抛发的和接收的）只要事件的type相同，那么就会被侦听事件接收到
+//        console.log(evt);
+        //事件函数中只有一个参数，这个参数就是事件对象
+        function fn1(e) {
+            console.log(e);
+        }*/
+
+        document.addEventListener("ev",fn1);
+        var evt = new Event("ev");
+        document.dispatchEvent(evt);//抛发后立即接收到
+        new Promise(function (res,rej) {
+            console.log("1");
+            res();
+        }).then(function () {
+                    console.log("2");
+                });
+        setTimeout(function () {
+            console.log("3");
+        },0);
+        function fn1(e) {
+            console.log("4");
+        }
+        console.log("5");
+
+    </script>
+</body>
+</html>

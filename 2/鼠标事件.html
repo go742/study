@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: chocolate;
+            position: absolute;
+        }
+        div div{
+            width: 50px;
+            height: 50px;
+            background-color: forestgreen;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <!--<form action="http://www.baidu.com" method="get">
+        <input type="text" name="user">
+        <input type="submit">
+    </form>-->
+    <div>
+        <div></div>
+    </div>
+    <script>
+        /*
+        * 阻止默认系统事件
+        * 1.阻止提交表单
+        * 2.阻止系统右键菜单(contextmenu事件中使用)
+        * */
+
+        /*var bn = document.querySelector("[type=submit]");
+        bn.addEventListener("click",clickHandler);
+        function clickHandler(e) {
+            console.log(e);
+            e.preventDefault();//阻止默认事件
+            e.returnValue = false;//IE8及以下浏览器
+        }*/
+
+        /*
+        * e.x  e.y  e.clientX  e.clientY    鼠标相对文档左上顶部位置（当有滚动条或者滚动条改变时，注意）
+        * e.pageX  e.pageY  鼠标相对页面左上角位置
+        *
+        *
+        * */
+        var div = document.querySelector("div");
+        div.addEventListener("click",clickHandler);//点击（鼠标左键）
+        div.addEventListener("dblclick",clickHandler);//双击
+//        div.addEventListener("mousemove",clickHandler);//在目标上移动鼠标
+        div.addEventListener("mouseover",clickHandler);//鼠标经过  针对e.target 目标（目标改变就会触发）
+        div.addEventListener("mouseout",clickHandler);//鼠标滑出  针对e.target 目标（目标改变就会触发）
+        div.addEventListener("mouseenter",clickHandler);//鼠标进入  针对e.currentTarget侦听的对象
+        div.addEventListener("mouseleave",clickHandler);//鼠标离开  针对e.currentTarget侦听的对象
+        div.addEventListener("mousedown",clickHandler);//按下鼠标（鼠标三键都会触发）
+        div.addEventListener("mouseup",clickHandler);//释放鼠标（鼠标三键都会触发）
+        div.addEventListener("contextmenu",clickHandler);//右键点击呼出菜单
+
+
+
+        function clickHandler(e) {
+            console.log(e.type);
+            e.preventDefault();
+        }
+
+    </script>
+</body>
+</html>

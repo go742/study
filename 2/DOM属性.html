@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!--HTML标签属性命名，不区分大小写，所以全部用小写，单词与单词之间用-连接-->
+    <script>
+//        document.body
+//        document.title
+//        document.title = "你有一封新邮件，请前往邮箱查收";
+//        console.log(document.URL);
+
+
+
+        /*
+        * DOM元素有两个属性    标签属性 对象属性
+        *
+        * 部分系统的标签属性和对象属性完全相同
+        * id  name  type  checked  title  src
+        *
+        * 注意：
+        * class属性在对象属性中是className
+        * */
+
+        var div = document.createElement("div");
+        div.a = 10;//DOM对象属性
+        console.log(div.a);
+        document.body.appendChild(div);
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <input type="text" id="text"><span></span>
+    <script>
+        /*
+        * []
+        * 在中括号中的字符仅可以选择一个字符，可以理解为或的关系
+        * [ac]  表示可以判断字符串中是否有一个字符a或者一个字符c
+        * [a]  中括号中仅有一个字符，那么这个中括号就没有意义了，这个和a字符相同
+        * 一般来说，中括号中代表的是任意两个及以上的字符中任意一个
+        * 可以用多个中括号来匹配更多的组合
+        * 在中括号中.的作用仅代表字符串，不是通配符
+        * 如果在字符类中需要使用[]字符，那就需要使用\[\]来做转义，如果仅使用[可以不用转义
+        * 在字符类中[]里面不能出现重复字符，因为[]内只代表一个字符，重复没有意义
+        *
+        *
+        *
+        * 字符类的范围
+        * 字符范围[a-z] [A-Z]
+        * 数字范围[0-9]
+        * */
+        var str = "catcotcdtc.t";
+        console.log(str.match(/c[ao]t/g));
+        console.log("1247985ac".match(/[012345679]/g));
+        console.log("abcdbadc".match(/[ab][ba]/g));//ab ba aa bb
+        console.log(str.match(/c[.a]t/g));
+        console.log("[a][c]".match(/[\[\]]/g));
+        console.log("[a][c]".match(/[[]/g));//查找[
+//        console.log("abcaaabbc".match(/[aacbd]/g));//错误写法
+
+        console.log("awgaggafbt123if ".match(/[a-z]/g));
+        console.log("awgagQGEfbt123if ".match(/[a-zA-Z]/g));
+//        console.log("awgagQGEfbt123if ".match(/[A-z]/g));//错误写法
+        console.log("15235547afgag1245".match(/[3-9]/g));
+
+        var text = document.getElementById("text");
+        text.addEventListener("input",textInputHandler);
+        function textInputHandler(e) {
+            if(/a/.test(text.value)){
+                text.nextElementSibling.textContent = "输入正确";
+                text.nextElementSibling.style.color= "#00FF00";
+                return;
+            }
+            text.nextElementSibling.textContent = "输入错误";
+            text.nextElementSibling.style.color = "#000000";
+        }
+    </script>
+</body>
+</html>

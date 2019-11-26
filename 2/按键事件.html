@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        document.addEventListener("keydown",keydownHandler);
+        document.addEventListener("keyup",keydownHandler);
+        /*
+        * e.code  当前按下的键  Key+键名
+        * e.key  当前按下的键  键名
+        * e.keyCode  键码值（用这个）
+        *
+        * 左上右下  键码值：37，38，39，40
+        * */
+        function keydownHandler(e) {
+            console.log(e);
+        }
+    </script>
+</body>
+</html>

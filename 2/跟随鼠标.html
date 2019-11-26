@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            width: 50px;
+            height: 50px;
+            background-color: chocolate;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        var div = document.querySelector("div");
+        document.addEventListener("mousemove",mouseHandler);
+        function mouseHandler(e) {
+            div.style.left = e.clientX-div.offsetWidth/2+"px";
+            div.style.top = e.clientY-div.offsetHeight/2+"px";
+        }
+    </script>
+</body>
+</html>

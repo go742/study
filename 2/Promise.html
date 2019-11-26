@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!--重要   1-->
+    <script>
+//        Promise
+        /*var img = new Image();
+        img.src = "images/pic1.jpg";
+        img.onload = function (){
+            var img = new Image();
+            img.src = ""
+        }*/
+
+        /*var promise = new Promise(function (resolve,reject){
+            var img = new Image();
+            img.src = "./images/pic1.jpg";
+            img.onload = function (){
+                resolve(this);
+            };
+            img.onerror = function(){
+                reject("加载失败");
+            }
+        });
+
+        promise.then(function (date){
+            console.log(date,"_________");
+        },function (error){
+            console.log(error,"||||||||");
+        })*/
+
+
+
+        function loadImg(src) {
+            return new Promise(function (res,rej) {
+                var img = new Image();
+
+                img.onload = function () {
+                    res(this);
+                };
+                img.onerror = function () {
+                    rej("加载错误");
+                };
+                img.src = src;
+            });
+        }
+
+        var arr = [];
+        loadImg("images/pic1.jpg").then(function (data) {
+            arr.push(data);
+            return loadImg("images/pic1.jpg");
+        },function (error) {
+            console.log(error);
+        }).then(function (data) {
+            arr.push(data);
+            console.log(arr);
+        },function (error) {
+            console.log(error);
+        })
+    </script>
+</body>
+</html>

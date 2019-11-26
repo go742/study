@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #texts{
+            color: #CCCCCC;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <input type="text" id="texts" value="姓名">
+        <input type="text" >
+        <button>按钮</button>
+    </form>
+
+    <a href="#">超链接</a>
+    <script>
+        /*
+        * focus  聚焦
+        * blur  失焦
+        * */
+        /*var input = document.getElementById("texts");
+        input.addEventListener("focus",focusHandler);
+        input.addEventListener("blur",focusHandler);
+        function focusHandler(e) {
+//            console.log(e.relatedTarget);
+            //e.relatedTarget 上一次焦点汇聚的元素对象
+            if(e.type==="blur"){
+                //str.trim()  去掉字符串的前后空格
+                if(this.value.trim().length===0){
+                    this.style.color = "#CCCCCC";
+                    this.value = "姓名";
+                }
+            }else if(e.type==="focus"){
+                if(this.value==="姓名"){
+                    this.style.color = "#000000";
+                    this.value = "";
+                }
+            }
+        }*/
+
+
+        //input事件  输入事件，当改变文本框内部内容时，收到该事件
+       /* var input = document.getElementById("texts");
+        input.addEventListener("input",inputHandler);
+        /!*
+        * e.data  当前输入的内容
+        * inputType  书入的类型，插入文本，删除文本
+        * isComposing  是否开启输入法
+        * *!/
+        function inputHandler(e) {
+            console.log(e);
+        }*/
+    </script>
+</body>
+</html>

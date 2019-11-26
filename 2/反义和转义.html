@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <input type="text" id="texts">
+    <script>
+        /*
+        * ^只用在[]中表示中括号中的这些之外都可以满足条件
+        * 如果^不在中括号的最前面，代表的是^字符
+        *
+        * */
+        var reg = /[^0-9]/g;//除了0-9的所有字符
+        console.log("1098a".match(reg));
+
+/*    文本框只能输入数值
+        var texts = document.getElementById("texts");
+        texts.addEventListener("input",inputHandler);
+        function inputHandler(e) {
+            texts.value = texts.value.replace(/[^0-9]/g,"");
+        }*/
+
+        console.log("1245a".match(/[\^0-9]/g));
+        console.log("1245^a".match(/[^\^]/g));
+        console.log("1245^a".match(/[0-9^a-z]/g));//0-9a-z^
+
+
+        /*
+        * 转义都代表一个字符
+        * \w  a-zA-Z0-9_
+        * \W  [^a-zA-Z0-9_]
+        * \d  [0-9]
+        * \D  [^0-9]
+        * \s  空白字符
+        * \S  非空白字符
+        *
+        * */
+//        console.log("son of  the     bitch".match(/\s/g));
+//        console.log("son of  the     bitch".replace(/\s/g,""));
+//        console.log(str.trim());
+//        console.log("son of  the     bitch".split(/\s/g));
+
+    </script>
+</body>
+</html>

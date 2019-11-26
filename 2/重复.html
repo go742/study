@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        /*
+        * {n}  n表示重复次数  n必须大于1，n等于1就是不重复
+        * {0}  表示匹配空字符
+        *
+        * */
+//        console.log("aabbccdd".match(/[ac]{2}/g));
+//        console.log("acaacaaacc".match(/[ac]{2}/g));//  /[ac][ac]/
+//        console.log("agada{2}".match(/a\{2\}/g));
+//        console.log("a{2}".match(/a{0}/g));
+//        console.log("a{2}".match(/at{0}/g));//a
+//        console.log("a{2}".match(/a[{}]/g));//a{
+
+        /*
+        * 重复范围
+        * a{2,10}  a重复次数不固定，最少重复2次，最多重复10次，如果这个重复次数大于10，
+        * 那么先找出最大为10的重复慈湖，这种重复范围都属于贪婪匹配，先找到最多的
+        *
+        * a{2,2}  如果最大和最小匹配相同那就是普通的重复
+        * minutes{0,1}  0次是空字符，1次表示有这个字符，因此最少就是minute符合条件，最多就是minutes符合条件
+        * a{1}  重复和不重复都行，会筛选最大重复次数
+        * */
+        console.log("aaa".match(/a{2,4}/g));//aaa
+        console.log("aaaa".match(/a{2,4}/g));//aaaa
+        console.log("aa".match(/a{2,4}/g));//aa
+        console.log("aaaaa".match(/a{2,4}/g));//aaaa
+        console.log("aaaaaa".match(/a{2,4}/g));//aaaa aa
+        console.log("aaaaaaa".match(/a{2,4}/g));//aaaa aaa
+        console.log("minute".match(/minutes{0,1}/));
+        console.log("aaaaa".match(/a{3,}/g));//3-无限次
+        console.log("aaaaa".match(/a{1,}/g));//1-无限次  重复或者不重复都行
+        console.log("bbbb".match(/a{0,}/g));//0-无限次  有和没有哦都行，重复多少次都行
+
+        /*
+        * *  {0,}  没有或者重复若干次
+        * +  {1,}  至少一次以上的重复
+        * ?  {0,1}  没有或者有都可以
+        *
+        * */
+        console.log("abcdef".match( /.*/g));//* 还有重复0次，空字符串也算
+        console.log("abcdef".match( /.+/g));//+ 至少重复1次，没有空字符串
+        console.log("abcdef".match( /.?/g));//? 最多1次，那就意味着只能找到一个字符，每个字符都满足，包括空字符串
+
+    </script>
+</body>
+</html>
